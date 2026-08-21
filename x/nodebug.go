@@ -1,0 +1,40 @@
+//go:build !debug
+// +build !debug
+
+/*
+ * SPDX-FileCopyrightText: © 2017-2026 Istari Digital, Inc.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package x
+
+import (
+	badger "github.com/luxfi/zapdb"
+	bpb "github.com/luxfi/zapdb/pb"
+	"github.com/hanzoai/graph/protos/pb"
+)
+
+// PrintRollup prints information about any rollup that happen
+func PrintRollup(plist *pb.PostingList, parts map[uint64]*pb.PostingList, baseKey []byte, ts uint64) {
+}
+
+// PrintMutationEdge prints all edges that are being inserted into badger
+func PrintMutationEdge(plist *pb.DirectedEdge, key ParsedKey, startTs uint64) {
+}
+
+// PrintOracleDelta prints all delta proposals that are commited
+func PrintOracleDelta(delta *pb.OracleDelta) {
+}
+
+// VerifyPack works in debug mode. Check out the comment in debug_on.go
+func VerifyPack(plist *pb.PostingList) {
+}
+
+// VerifySnapshot works in debug mode. Check out the comment in debug_on.go
+func VerifySnapshot(pstore *badger.DB, readTs uint64) {
+}
+
+// VerifyPostingSplits works in debug mode. Check out the comment in debug_on.go
+func VerifyPostingSplits(kvs []*bpb.KV, plist *pb.PostingList,
+	parts map[uint64]*pb.PostingList, baseKey []byte) {
+}

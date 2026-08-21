@@ -1,0 +1,39 @@
+name: ci-dgraph-fuzz
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+    branches:
+      - main
+      - release/**
+
+permissions:
+  contents: read
+
+jobs:
+  changes:
+    uses: ./.github/workflows/detect-changes.yml
+
+  fuzz-test:
+    needs: changes
+    if: github.event.pull_request.draft == false && needs.changes.outputs.code == 'true'
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      - name: Run fuzz tests
+        run: |
+          #!/bin/bash
+          # go env settings
+          export GOPATH=~/go
+          go test -v ./dql -fuzz="Fuzz" -fuzztime="300s" -fuzzminimizetime="120s"

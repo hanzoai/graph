@@ -1,0 +1,7 @@
+Hanzo Graph derives from Dgraph, Copyright the Dgraph authors, used under the
+Apache License 2.0. The upstream project is github.com/dgraph-io/dgraph; this
+fork is taken at 64804bd2.
+
+What survives in HEAD: the posting-list engine, the DQL parser, the type and
+tokenizer system, the index and schema layers, and the wire types. The storage
+engine is github.com/luxfi/zapdb and the transport is ZAP.
