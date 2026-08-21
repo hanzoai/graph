@@ -1,0 +1,9 @@
+# What CI builds and tests here, read by both GitHub Actions and platform.hanzo.ai.
+#
+# There is no image: this repository is a Go library, so `test` is the whole of
+# it. A published binary would be a second answer to the question of how the
+# engine runs, and the answer is that a host embeds it.
+test:
+  - go build ./...
+  - go vet ./...
+  - go test ./...
