@@ -13,7 +13,6 @@ syntax = "proto3";
 package pb;
 
 import "github.com/dgraph-io/dgo/v250/protos/api.proto";
-import "github.com/dgraph-io/badger/v4/pb/pb.proto";
 import "google/protobuf/descriptor.proto";
 
 
@@ -304,25 +303,6 @@ message RestoreRequest {
   bool isNamespaceAwareRestore = 20;
 }
 
-message Proposal {
-  reserved 7;  // Was used for string key.
-  Mutations mutations = 2;
-  repeated badgerpb4.KV kv = 4;
-  MembershipState state = 5;
-  string clean_predicate =
-      6;  // Delete the predicate which was moved to other group.
-  OracleDelta delta = 8;
-  Snapshot snapshot = 9;  // Used to tell the group when to take snapshot.
-  uint64 index = 10;      // Used to store Raft index, in raft.Ready.
-  uint64 expected_checksum =
-      11;  // Block an operation until membership reaches this checksum.
-  RestoreRequest restore = 12;
-  CDCState cdc_state = 13;
-  DeleteNsRequest delete_ns = 14;  // Used to delete namespace.
-  // Skipping 15 as it is used for uint64 key in master and might be needed later here.
-  uint64 start_ts = 16;
- api.UpdateExtSnapshotStreamingStateRequest ext_snapshot_state = 17;
-}
 
 message CDCState {
   uint64 sent_ts = 1;
@@ -593,7 +573,6 @@ service Worker {
   rpc Export(ExportRequest) returns (ExportResponse) {}
   rpc ReceivePredicate(stream KVS) returns (api.Payload) {}
   rpc MovePredicate(MovePredicatePayload) returns (api.Payload) {}
-  rpc Subscribe(SubscriptionRequest) returns (stream badgerpb4.KVList) {}
   rpc UpdateGraphQLSchema(UpdateGraphQLSchemaRequest)
       returns (UpdateGraphQLSchemaResponse) {}
   rpc DeleteNamespace(DeleteNsRequest) returns (Status) {}
@@ -610,14 +589,7 @@ message TabletRequest {
   uint32 group_id = 2;
 }
 
-message SubscriptionRequest {
-  repeated bytes prefixes = 1;
-  repeated badgerpb4.Match matches = 2;
-}
 
-message SubscriptionResponse {
-  badgerpb4.KVList kvs = 1;
-}
 
 message Num {
   uint64 val = 1;
