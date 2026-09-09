@@ -1,6 +1,6 @@
 module github.com/hanzoai/graph
 
-go 1.26.5
+go 1.26.8
 
 require (
 	contrib.go.opencensus.io/exporter/prometheus v0.4.2
