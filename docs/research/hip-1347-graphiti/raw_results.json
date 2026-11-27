@@ -1,0 +1,307 @@
+{
+  "suite_name": "HIP-1347 Bitemporal Knowledge Graph \u0026 Provenance Benchmark (hanzoai/graph#4)",
+  "reference_spec": "Graphiti (Apache-2.0) — Clean-Room Go Bitemporal Engine",
+  "total_corpus_records": 220,
+  "total_queries": 120,
+  "queries_per_category": 20,
+  "timed_iterations": 25,
+  "backends": [
+    {
+      "backend_name": "overwrite_mutable_graph",
+      "total_queries": 120,
+      "total_passed": 35,
+      "overall_accuracy": 0.2917,
+      "temporal_qa_accuracy": 0.3,
+      "superseded_fact_accuracy": 1,
+      "historical_as_of_accuracy": 0,
+      "bitemporal_audit_as_at_accuracy": 0,
+      "delayed_event_convergence_accuracy": 0.5,
+      "contradiction_handling_accuracy": 0,
+      "downstream_agent_task_success": 0.25,
+      "stale_answer_count": 60,
+      "stale_answer_eligible_queries": 95,
+      "stale_answer_frequency": 0.6316,
+      "latency_mean_us": 0.6,
+      "latency_p50_us": 0.59,
+      "latency_p95_us": 0.92,
+      "estimated_tokens_per_answer": 18,
+      "storage": {
+        "evidence_records_stored": 0,
+        "total_edges_stored": 80,
+        "total_index_bytes": 8814,
+        "estimated_bytes_per_edge": 110.18
+      },
+      "cross_tenant_leaks": 0,
+      "rebuild_bit_identical": false,
+      "category_breakdown": [
+        {
+          "category": "current_state_after_supersession",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "historical_valid_time_as_of",
+          "passed": 0,
+          "total": 20,
+          "accuracy": 0
+        },
+        {
+          "category": "audit_bitemporal_as_known_at",
+          "passed": 0,
+          "total": 20,
+          "accuracy": 0
+        },
+        {
+          "category": "delayed_out_of_order_events",
+          "passed": 10,
+          "total": 20,
+          "accuracy": 0.5
+        },
+        {
+          "category": "contradiction_detection",
+          "passed": 0,
+          "total": 20,
+          "accuracy": 0
+        },
+        {
+          "category": "downstream_agent_action_selection",
+          "passed": 5,
+          "total": 20,
+          "accuracy": 0.25
+        }
+      ]
+    },
+    {
+      "backend_name": "append_only_no_supersession",
+      "total_queries": 120,
+      "total_passed": 30,
+      "overall_accuracy": 0.25,
+      "temporal_qa_accuracy": 0.25,
+      "superseded_fact_accuracy": 0,
+      "historical_as_of_accuracy": 0,
+      "bitemporal_audit_as_at_accuracy": 1,
+      "delayed_event_convergence_accuracy": 0.25,
+      "contradiction_handling_accuracy": 0,
+      "downstream_agent_task_success": 0.25,
+      "stale_answer_count": 65,
+      "stale_answer_eligible_queries": 95,
+      "stale_answer_frequency": 0.6842,
+      "latency_mean_us": 1.77,
+      "latency_p50_us": 0.91,
+      "latency_p95_us": 3.83,
+      "estimated_tokens_per_answer": 39,
+      "storage": {
+        "evidence_records_stored": 220,
+        "total_edges_stored": 220,
+        "total_index_bytes": 74949,
+        "estimated_bytes_per_edge": 340.68
+      },
+      "cross_tenant_leaks": 0,
+      "rebuild_bit_identical": true,
+      "category_breakdown": [
+        {
+          "category": "current_state_after_supersession",
+          "passed": 0,
+          "total": 20,
+          "accuracy": 0
+        },
+        {
+          "category": "historical_valid_time_as_of",
+          "passed": 0,
+          "total": 20,
+          "accuracy": 0
+        },
+        {
+          "category": "audit_bitemporal_as_known_at",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "delayed_out_of_order_events",
+          "passed": 5,
+          "total": 20,
+          "accuracy": 0.25
+        },
+        {
+          "category": "contradiction_detection",
+          "passed": 0,
+          "total": 20,
+          "accuracy": 0
+        },
+        {
+          "category": "downstream_agent_action_selection",
+          "passed": 5,
+          "total": 20,
+          "accuracy": 0.25
+        }
+      ]
+    },
+    {
+      "backend_name": "valid_time_only_unitemporal",
+      "total_queries": 120,
+      "total_passed": 70,
+      "overall_accuracy": 0.5833,
+      "temporal_qa_accuracy": 0.6,
+      "superseded_fact_accuracy": 1,
+      "historical_as_of_accuracy": 1,
+      "bitemporal_audit_as_at_accuracy": 0,
+      "delayed_event_convergence_accuracy": 1,
+      "contradiction_handling_accuracy": 0,
+      "downstream_agent_task_success": 0.5,
+      "stale_answer_count": 25,
+      "stale_answer_eligible_queries": 95,
+      "stale_answer_frequency": 0.2632,
+      "latency_mean_us": 0.44,
+      "latency_p50_us": 0.42,
+      "latency_p95_us": 0.52,
+      "estimated_tokens_per_answer": 18,
+      "storage": {
+        "evidence_records_stored": 220,
+        "total_edges_stored": 205,
+        "total_index_bytes": 63244,
+        "estimated_bytes_per_edge": 308.51
+      },
+      "cross_tenant_leaks": 0,
+      "rebuild_bit_identical": false,
+      "category_breakdown": [
+        {
+          "category": "current_state_after_supersession",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "historical_valid_time_as_of",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "audit_bitemporal_as_known_at",
+          "passed": 0,
+          "total": 20,
+          "accuracy": 0
+        },
+        {
+          "category": "delayed_out_of_order_events",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "contradiction_detection",
+          "passed": 0,
+          "total": 20,
+          "accuracy": 0
+        },
+        {
+          "category": "downstream_agent_action_selection",
+          "passed": 10,
+          "total": 20,
+          "accuracy": 0.5
+        }
+      ]
+    },
+    {
+      "backend_name": "bitemporal_graphiti_provenance",
+      "total_queries": 120,
+      "total_passed": 120,
+      "overall_accuracy": 1,
+      "temporal_qa_accuracy": 1,
+      "superseded_fact_accuracy": 1,
+      "historical_as_of_accuracy": 1,
+      "bitemporal_audit_as_at_accuracy": 1,
+      "delayed_event_convergence_accuracy": 1,
+      "contradiction_handling_accuracy": 1,
+      "downstream_agent_task_success": 1,
+      "stale_answer_count": 0,
+      "stale_answer_eligible_queries": 95,
+      "stale_answer_frequency": 0,
+      "latency_mean_us": 1.14,
+      "latency_p50_us": 0.92,
+      "latency_p95_us": 1.85,
+      "estimated_tokens_per_answer": 25.25,
+      "storage": {
+        "evidence_records_stored": 220,
+        "total_edges_stored": 345,
+        "total_index_bytes": 130448,
+        "estimated_bytes_per_edge": 378.11
+      },
+      "cross_tenant_leaks": 0,
+      "rebuild_bit_identical": true,
+      "category_breakdown": [
+        {
+          "category": "current_state_after_supersession",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "historical_valid_time_as_of",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "audit_bitemporal_as_known_at",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "delayed_out_of_order_events",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "contradiction_detection",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        },
+        {
+          "category": "downstream_agent_action_selection",
+          "passed": 20,
+          "total": 20,
+          "accuracy": 1
+        }
+      ]
+    }
+  ],
+  "negative_boundary_regimes": {
+    "static_immutable_knowledge_overhead": {
+      "fact_count": 500,
+      "query_count": 100,
+      "plain_graph_accuracy": 1,
+      "bitemporal_graph_accuracy": 1,
+      "accuracy_gain": 0,
+      "plain_bytes_per_edge": 127,
+      "bitemporal_bytes_per_edge": 364,
+      "extra_bytes_per_edge": 237,
+      "memory_overhead_multiplier": 2.87,
+      "plain_mean_latency_us": 0.56,
+      "bitemporal_mean_latency_us": 1.13,
+      "summary": "On static non-evolving facts with zero supersessions or delayed events, bitemporal tracking delivers 0.0% accuracy gain while carrying extra timestamp and provenance bytes per edge."
+    },
+    "unresolvable_simultaneous_contradiction": {
+      "conflict_pairs_tested": 20,
+      "auto_resolved_without_policy": 0,
+      "explicit_conflicts_surfaced": 20,
+      "both_evidence_preserved_count": 20,
+      "conflict_surfacing_rate": 1,
+      "summary": "Two equal-precedence sources asserting conflicting functional values for the exact same [ValidFrom, ValidTo) cannot be auto-resolved without a domain trust policy; the engine honestly surfaces ContradictionConflict with both evidence pointers."
+    },
+    "cross_tenant_acl_denial": {
+      "unauthorized_queries_tested": 20,
+      "returned_hits": 0,
+      "leaked_edges": 0,
+      "leaked_conflicts": 0,
+      "inspected_foreign_edges": 0,
+      "summary": "Pre-return tenant and ACL filtering denies 100% of cross-tenant and restricted-scope reads (0 hits returned, 0 foreign edges inspected), never relaxing isolation for speed or recall."
+    }
+  },
+  "rebuild_bit_identical_verified": true
+}
