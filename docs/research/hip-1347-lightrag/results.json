@@ -1,0 +1,436 @@
+{
+  "generated_at_utc": "2026-11-26T15:45:42Z",
+  "go_version": "go1.26.8",
+  "goos": "linux",
+  "goarch": "amd64",
+  "num_cpu": 2,
+  "seed": 1347,
+  "top_k": 5,
+  "iters": 10,
+  "corpus": {
+    "repo_root": ".",
+    "real_go_source_files": 97,
+    "real_doc_files": 5,
+    "operational_artifacts": 12,
+    "total_sources": 114,
+    "total_bytes": 895824,
+    "total_chunks": 786,
+    "raw_entities_extracted": 2193,
+    "unique_canonical_entities": 1116,
+    "duplicate_entities_merged": 1077,
+    "duplicate_entity_rate_pct": 49.11,
+    "raw_relations_extracted": 2563,
+    "unique_canonical_relations": 2266,
+    "extraction_tokens_in": 225191,
+    "extraction_tokens_out": 159006,
+    "estimated_extract_cost_usd": 0.129182,
+    "relations_per_dollar": 17541.11
+  },
+  "incremental": {
+    "incremental_ops": 21,
+    "update_ops": 15,
+    "insert_ops": 3,
+    "delete_ops": 3,
+    "incremental_latency": {
+      "p50_ms": 4,
+      "p95_ms": 14.032,
+      "p99_ms": 28.438,
+      "mean_ms": 5.408,
+      "count": 21
+    },
+    "full_rebuild_latency": {
+      "p50_ms": 843.441,
+      "p95_ms": 1209.001,
+      "p99_ms": 1209.001,
+      "mean_ms": 949.888,
+      "count": 5
+    },
+    "speedup_p50": 210.86,
+    "speedup_mean": 175.64,
+    "mean_subgraph_churn_pct": 1.05,
+    "max_subgraph_churn_pct": 3.81,
+    "mean_affected_entities": 13.24,
+    "mean_affected_relations": 22.43,
+    "digest_after_incremental": "37496dbb202ac63c",
+    "digest_after_full_rebuild": "37496dbb202ac63c",
+    "bit_exact_equivalence": true,
+    "drop_enforces_not_built_err": true
+  },
+  "overall_systems": [
+    {
+      "mode": "ordinary_hybrid",
+      "queries": 26,
+      "recall_at_k": 0.7179,
+      "mrr_at_k": 0.7769,
+      "answer_f1": 0.9115,
+      "answer_em": 0.7308,
+      "task_success_rate": 0.8846,
+      "mean_context_tokens": 1398.35,
+      "cost_per_1m_useful_tokens_usd": 10.4,
+      "latency": {
+        "p50_ms": 0.78,
+        "p95_ms": 2.329,
+        "p99_ms": 4.132,
+        "mean_ms": 0.97,
+        "count": 260
+      },
+      "cached_latency_p50_ms": 0.003
+    },
+    {
+      "mode": "lightrag_local",
+      "queries": 26,
+      "recall_at_k": 0.8333,
+      "mrr_at_k": 0.8205,
+      "answer_f1": 0.9538,
+      "answer_em": 0.7692,
+      "task_success_rate": 0.9615,
+      "mean_context_tokens": 1485.88,
+      "cost_per_1m_useful_tokens_usd": 8.88,
+      "latency": {
+        "p50_ms": 2.273,
+        "p95_ms": 6.952,
+        "p99_ms": 12.141,
+        "mean_ms": 3.004,
+        "count": 260
+      },
+      "cached_latency_p50_ms": 0.015
+    },
+    {
+      "mode": "lightrag_global",
+      "queries": 26,
+      "recall_at_k": 0.7372,
+      "mrr_at_k": 0.6891,
+      "answer_f1": 0.8808,
+      "answer_em": 0.5769,
+      "task_success_rate": 0.8462,
+      "mean_context_tokens": 1778.73,
+      "cost_per_1m_useful_tokens_usd": 11.63,
+      "latency": {
+        "p50_ms": 4.931,
+        "p95_ms": 15.488,
+        "p99_ms": 19.646,
+        "mean_ms": 6.116,
+        "count": 260
+      },
+      "cached_latency_p50_ms": 0.016
+    },
+    {
+      "mode": "lightrag_hybrid",
+      "queries": 26,
+      "recall_at_k": 0.8141,
+      "mrr_at_k": 0.8846,
+      "answer_f1": 0.9692,
+      "answer_em": 0.8462,
+      "task_success_rate": 1,
+      "mean_context_tokens": 1598.77,
+      "cost_per_1m_useful_tokens_usd": 10.02,
+      "latency": {
+        "p50_ms": 7.603,
+        "p95_ms": 19.005,
+        "p99_ms": 25.356,
+        "mean_ms": 8.822,
+        "count": 260
+      },
+      "cached_latency_p50_ms": 0.016
+    }
+  ],
+  "workloads": [
+    {
+      "workload": "cross_package_multihop",
+      "queries": 10,
+      "systems": [
+        {
+          "mode": "ordinary_hybrid",
+          "queries": 10,
+          "recall_at_k": 0.5667,
+          "mrr_at_k": 0.75,
+          "answer_f1": 0.94,
+          "answer_em": 0.7,
+          "task_success_rate": 1,
+          "mean_context_tokens": 1175.6,
+          "cost_per_1m_useful_tokens_usd": 12.72,
+          "latency": {
+            "p50_ms": 0.961,
+            "p95_ms": 2.551,
+            "p99_ms": 4.132,
+            "mean_ms": 1.266,
+            "count": 100
+          },
+          "cached_latency_p50_ms": 0.003
+        },
+        {
+          "mode": "lightrag_local",
+          "queries": 10,
+          "recall_at_k": 0.8167,
+          "mrr_at_k": 0.8,
+          "answer_f1": 0.96,
+          "answer_em": 0.8,
+          "task_success_rate": 1,
+          "mean_context_tokens": 1281.1,
+          "cost_per_1m_useful_tokens_usd": 8.28,
+          "latency": {
+            "p50_ms": 2.926,
+            "p95_ms": 10.225,
+            "p99_ms": 12.51,
+            "mean_ms": 3.721,
+            "count": 100
+          },
+          "cached_latency_p50_ms": 0.021
+        },
+        {
+          "mode": "lightrag_global",
+          "queries": 10,
+          "recall_at_k": 0.65,
+          "mrr_at_k": 0.7,
+          "answer_f1": 0.88,
+          "answer_em": 0.7,
+          "task_success_rate": 0.8,
+          "mean_context_tokens": 1608.4,
+          "cost_per_1m_useful_tokens_usd": 11.9,
+          "latency": {
+            "p50_ms": 4.978,
+            "p95_ms": 10.319,
+            "p99_ms": 18.095,
+            "mean_ms": 5.531,
+            "count": 100
+          },
+          "cached_latency_p50_ms": 0.017
+        },
+        {
+          "mode": "lightrag_hybrid",
+          "queries": 10,
+          "recall_at_k": 0.7833,
+          "mrr_at_k": 0.85,
+          "answer_f1": 0.98,
+          "answer_em": 0.9,
+          "task_success_rate": 1,
+          "mean_context_tokens": 1369.3,
+          "cost_per_1m_useful_tokens_usd": 9.53,
+          "latency": {
+            "p50_ms": 8.101,
+            "p95_ms": 22.52,
+            "p99_ms": 25.356,
+            "mean_ms": 10.065,
+            "count": 100
+          },
+          "cached_latency_p50_ms": 0.016
+        }
+      ]
+    },
+    {
+      "workload": "global_thematic",
+      "queries": 8,
+      "systems": [
+        {
+          "mode": "ordinary_hybrid",
+          "queries": 8,
+          "recall_at_k": 0.625,
+          "mrr_at_k": 0.5875,
+          "answer_f1": 0.7875,
+          "answer_em": 0.5,
+          "task_success_rate": 0.625,
+          "mean_context_tokens": 1482.63,
+          "cost_per_1m_useful_tokens_usd": 7.18,
+          "latency": {
+            "p50_ms": 0.717,
+            "p95_ms": 2.322,
+            "p99_ms": 3.673,
+            "mean_ms": 0.933,
+            "count": 80
+          },
+          "cached_latency_p50_ms": 0.003
+        },
+        {
+          "mode": "lightrag_local",
+          "queries": 8,
+          "recall_at_k": 0.6875,
+          "mrr_at_k": 0.6667,
+          "answer_f1": 0.9,
+          "answer_em": 0.5,
+          "task_success_rate": 0.875,
+          "mean_context_tokens": 1558,
+          "cost_per_1m_useful_tokens_usd": 6.64,
+          "latency": {
+            "p50_ms": 2.166,
+            "p95_ms": 5.138,
+            "p99_ms": 7.178,
+            "mean_ms": 2.754,
+            "count": 80
+          },
+          "cached_latency_p50_ms": 0.015
+        },
+        {
+          "mode": "lightrag_global",
+          "queries": 8,
+          "recall_at_k": 0.5833,
+          "mrr_at_k": 0.5938,
+          "answer_f1": 0.7625,
+          "answer_em": 0,
+          "task_success_rate": 0.75,
+          "mean_context_tokens": 1937,
+          "cost_per_1m_useful_tokens_usd": 9.13,
+          "latency": {
+            "p50_ms": 4.995,
+            "p95_ms": 16.698,
+            "p99_ms": 18.704,
+            "mean_ms": 6.945,
+            "count": 80
+          },
+          "cached_latency_p50_ms": 0.015
+        },
+        {
+          "mode": "lightrag_hybrid",
+          "queries": 8,
+          "recall_at_k": 0.6667,
+          "mrr_at_k": 0.8125,
+          "answer_f1": 0.925,
+          "answer_em": 0.625,
+          "task_success_rate": 1,
+          "mean_context_tokens": 1727.63,
+          "cost_per_1m_useful_tokens_usd": 7.74,
+          "latency": {
+            "p50_ms": 7.671,
+            "p95_ms": 19.005,
+            "p99_ms": 28.915,
+            "mean_ms": 9.144,
+            "count": 80
+          },
+          "cached_latency_p50_ms": 0.017
+        }
+      ]
+    },
+    {
+      "workload": "single_fact_exact",
+      "queries": 8,
+      "systems": [
+        {
+          "mode": "ordinary_hybrid",
+          "queries": 8,
+          "recall_at_k": 1,
+          "mrr_at_k": 1,
+          "answer_f1": 1,
+          "answer_em": 1,
+          "task_success_rate": 1,
+          "mean_context_tokens": 1592.5,
+          "cost_per_1m_useful_tokens_usd": 13.83,
+          "latency": {
+            "p50_ms": 0.469,
+            "p95_ms": 1.182,
+            "p99_ms": 4.31,
+            "mean_ms": 0.639,
+            "count": 80
+          },
+          "cached_latency_p50_ms": 0.004
+        },
+        {
+          "mode": "lightrag_local",
+          "queries": 8,
+          "recall_at_k": 1,
+          "mrr_at_k": 1,
+          "answer_f1": 1,
+          "answer_em": 1,
+          "task_success_rate": 1,
+          "mean_context_tokens": 1669.75,
+          "cost_per_1m_useful_tokens_usd": 14.43,
+          "latency": {
+            "p50_ms": 2.15,
+            "p95_ms": 4.354,
+            "p99_ms": 7.521,
+            "mean_ms": 2.359,
+            "count": 80
+          },
+          "cached_latency_p50_ms": 0.014
+        },
+        {
+          "mode": "lightrag_global",
+          "queries": 8,
+          "recall_at_k": 1,
+          "mrr_at_k": 0.7708,
+          "answer_f1": 1,
+          "answer_em": 1,
+          "task_success_rate": 1,
+          "mean_context_tokens": 1833.38,
+          "cost_per_1m_useful_tokens_usd": 15.84,
+          "latency": {
+            "p50_ms": 4.18,
+            "p95_ms": 16.53,
+            "p99_ms": 23.347,
+            "mean_ms": 6.018,
+            "count": 80
+          },
+          "cached_latency_p50_ms": 0.015
+        },
+        {
+          "mode": "lightrag_hybrid",
+          "queries": 8,
+          "recall_at_k": 1,
+          "mrr_at_k": 1,
+          "answer_f1": 1,
+          "answer_em": 1,
+          "task_success_rate": 1,
+          "mean_context_tokens": 1756.75,
+          "cost_per_1m_useful_tokens_usd": 15.18,
+          "latency": {
+            "p50_ms": 6.14,
+            "p95_ms": 10.716,
+            "p99_ms": 21.477,
+            "mean_ms": 6.947,
+            "count": 80
+          },
+          "cached_latency_p50_ms": 0.014
+        }
+      ]
+    }
+  ],
+  "freshness": {
+    "queries_tested": 6,
+    "cache_invalidated_on_edit": true,
+    "updated_recall_rate": 1,
+    "deleted_ghost_recall_rate": 0
+  },
+  "security": {
+    "probes_executed": 16,
+    "lightrag_leak_count": 0,
+    "lightrag_leak_rate_pct": 0,
+    "unfiltered_control_leaks": 16,
+    "unfiltered_control_rate_pct": 100,
+    "acl_filtered_candidates_seen": 60
+  },
+  "negative_regimes": [
+    {
+      "name": "neg_simple_single_fact_overhead",
+      "description": "On exact single-identifier lookups (single_fact_exact), ordinary_hybrid achieves 100.0% Recall@K and 100.0% EM in 0.469 ms p50, matching or exceeding lightrag_hybrid (100.0% Recall@K, 100.0% EM, 6.140 ms p50) while lightrag_hybrid adds 13.09x retrieval latency overhead from dual-level graph expansion. Route exact single-symbol queries directly to ordinary_hybrid.",
+      "metrics": {
+        "latency_overhead_x": 13.09,
+        "lightrag_hybrid_p50_ms": 6.14,
+        "lightrag_hybrid_recall_pct": 100,
+        "ordinary_hybrid_p50_ms": 0.469,
+        "ordinary_hybrid_recall_pct": 100
+      }
+    },
+    {
+      "name": "neg_single_channel_ablation",
+      "description": "On cross-cutting thematic queries (global_thematic), neither single graph channel suffices alone: Global-only achieves 58.3% Recall@K / 0.594 MRR / 0.0% EM / 75.0% Task Success and Local-only achieves 68.8% Recall@K / 0.667 MRR / 50.0% EM / 87.5% Task Success, whereas Dual-Level Hybrid reaches 0.812 MRR / 62.5% EM / 100.0% Task Success — confirming that fusing Local, Global, and direct chunk channels is required.",
+      "metrics": {
+        "global_em_pct": 0,
+        "global_mrr": 0.5938,
+        "global_task_success_pct": 75,
+        "hybrid_em_pct": 62.5,
+        "hybrid_mrr": 0.8125,
+        "hybrid_task_success_pct": 100,
+        "local_em_pct": 50,
+        "local_mrr": 0.6667,
+        "local_task_success_pct": 87.5
+      }
+    },
+    {
+      "name": "neg_acl_bridge_leakage_control",
+      "description": "When multiple tenants and ACL roles share entity names (posting.List, x.Keys), an unfiltered shared-entity graph leaks restricted data on 16/16 (100.0%) adversarial probes across retrieval modes, whereas LightRAG's per-tenant partitioning and pre-return ACL scoping achieve 0/16 (0.0%) leakage.",
+      "metrics": {
+        "lightrag_leak_rate_pct": 0,
+        "probes_executed": 16,
+        "unfiltered_leak_rate_pct": 100
+      }
+    }
+  ]
+}
